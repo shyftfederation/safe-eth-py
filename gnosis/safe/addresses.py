@@ -283,7 +283,7 @@ MASTER_COPIES: Dict[EthereumNetwork, List[Tuple[str, int, str]]] = {
         ("0x3E5c63644E683549055b9Be8653de26E0B4CD36E", 1000, "1.3.0+L2"),  # v1.3.0
     ],
     EthereumNetwork.SHYFT_TESTNET: [
-        ("0x3E5c63644E683549055b9Be8653de26E0B4CD36E", 1984340, "1.3.0+L2"),  # v1.3.0
+        ("0xb4A7C7da1631CF60A2Cf23ABc86986f99a1A7f70", 47000, "1.3.0"),  # v1.3.0
     ],
     EthereumNetwork.REI_NETWORK: [
         ("0x3E5c63644E683549055b9Be8653de26E0B4CD36E", 2388036, "1.3.0+L2"),
@@ -722,7 +722,7 @@ PROXY_FACTORIES: Dict[EthereumNetwork, List[Tuple[str, int]]] = {
         ("0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2", 2000),  # v1.3.0
     ],
     EthereumNetwork.SHYFT_TESTNET: [
-        ("0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2", 1984340),  # v1.3.0
+        ("0xE89ce3bcD35bA068A9F9d906896D3d03Ad5C30EC", 47000),  # v1.3.0
     ],
     EthereumNetwork.REI_NETWORK: [
         ("0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2", 2387999),  # v1.3.0
