@@ -5,7 +5,13 @@ Every entry contains a tuple with address, deployment block number and version
 """
 from typing import Dict, List, Tuple
 
+from eth_typing import ChecksumAddress
+
 from gnosis.eth import EthereumNetwork
+
+SAFE_SIMULATE_TX_ACCESSOR_ADDRESS: ChecksumAddress = (
+    "0x3d4BA2E0884aa488718476ca2FB8Efc291A46199"
+)
 
 MASTER_COPIES: Dict[EthereumNetwork, List[Tuple[str, int, str]]] = {
     EthereumNetwork.MAINNET: [
@@ -19,7 +25,16 @@ MASTER_COPIES: Dict[EthereumNetwork, List[Tuple[str, int, str]]] = {
             12504423,
             "1.3.0+L2",
         ),  # default singleton address
-        ("0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552", 12504268, "1.3.0"),
+        (
+            "0x69f4D1788e39c87893C980c06EdF4b7f686e2938",
+            17530813,
+            "1.3.0",
+        ),  # safe singleton factory
+        (
+            "0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552",
+            12504268,
+            "1.3.0",
+        ),  # default singleton address
         ("0x6851D6fDFAfD08c0295C392436245E5bc78B0185", 10329734, "1.2.0"),
         ("0x34CfAC646f301356fAa8B21e94227e3583Fe3F5F", 9084503, "1.1.1"),
         ("0xaE32496491b53841efb51829d6f886387708F99B", 8915728, "1.1.0"),
@@ -125,7 +140,16 @@ MASTER_COPIES: Dict[EthereumNetwork, List[Tuple[str, int, str]]] = {
         ("0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552", 14306478, "1.3.0"),
     ],
     EthereumNetwork.POLYGON_ZKEVM: [
-        ("0x3E5c63644E683549055b9Be8653de26E0B4CD36E", 79000, "1.3.0+L2"),
+        (
+            "0xfb1bffC9d739B8D520DaF37dF666da4C687191EA",
+            4460434,
+            "1.3.0+L2",
+        ),  # safe singleton address
+        (
+            "0x3E5c63644E683549055b9Be8653de26E0B4CD36E",
+            79000,
+            "1.3.0+L2",
+        ),  # default singleton address
         ("0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552", 79000, "1.3.0"),
     ],
     EthereumNetwork.MUMBAI: [
@@ -550,6 +574,27 @@ MASTER_COPIES: Dict[EthereumNetwork, List[Tuple[str, int, str]]] = {
         ("0xfb1bffC9d739B8D520DaF37dF666da4C687191EA", 203994162, "1.3.0+L2"),
         ("0x69f4D1788e39c87893C980c06EdF4b7f686e2938", 203994202, "1.3.0"),
     ],
+    EthereumNetwork.SCROLL_SEPOLIA_TESTNET: [
+        ("0x3E5c63644E683549055b9Be8653de26E0B4CD36E", 6261, "1.3.0+L2"),
+        ("0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552", 6262, "1.3.0"),
+    ],
+    EthereumNetwork.FANTOM_OPERA: [
+        ("0xfb1bffC9d739B8D520DaF37dF666da4C687191EA", 38810826, "1.3.0+L2"),
+        ("0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552", 21817262, "1.3.0"),
+        ("0x3E5c63644E683549055b9Be8653de26E0B4CD36E", 4580000, "1.3.0+L2"),
+    ],
+    EthereumNetwork.FANTOM_TESTNET: [
+        ("0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552", 4627348, "1.3.0"),
+        ("0x5696Ae62C36aF747966522C401FbD57492451f19", 4627348, "1.3.0"),
+    ],
+    EthereumNetwork.RSK_MAINNET: [
+        ("0x3E5c63644E683549055b9Be8653de26E0B4CD36E", 3891238, "1.3.0+L2"),
+        ("0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552", 3891240, "1.3.0"),
+    ],
+    EthereumNetwork.RSK_TESTNET: [
+        ("0x3E5c63644E683549055b9Be8653de26E0B4CD36E", 2362236, "1.3.0+L2"),
+        ("0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552", 2362238, "1.3.0"),
+    ],
 }
 
 PROXY_FACTORIES: Dict[EthereumNetwork, List[Tuple[str, int]]] = {
@@ -625,7 +670,14 @@ PROXY_FACTORIES: Dict[EthereumNetwork, List[Tuple[str, int]]] = {
         ("0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2", 13736914),  # v1.3.0
     ],
     EthereumNetwork.POLYGON_ZKEVM: [
-        ("0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2", 79000),  # v1.3.0
+        (
+            "0xC22834581EbC8527d974F8a1c97E1bEA4EF910BC",
+            4460053,
+        ),  # v1.3.0 safe singleton address
+        (
+            "0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2",
+            79000,
+        ),  # v1.3.0 default singleton address
     ],
     EthereumNetwork.ARBITRUM_ONE: [
         (
@@ -920,5 +972,22 @@ PROXY_FACTORIES: Dict[EthereumNetwork, List[Tuple[str, int]]] = {
     ],
     EthereumNetwork.NEON_EVM_MAINNET: [
         ("0xC22834581EbC8527d974F8a1c97E1bEA4EF910BC", 203993869),  # v1.3.0
+    ],
+    EthereumNetwork.SCROLL_SEPOLIA_TESTNET: [
+        ("0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2", 6254),  # v1.3.0
+    ],
+    EthereumNetwork.FANTOM_OPERA: [
+        ("0xC22834581EbC8527d974F8a1c97E1bEA4EF910BC", 38810826),  # v1.3.0
+        ("0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2", 21817221),  # v1.3.0
+    ],
+    EthereumNetwork.FANTOM_TESTNET: [
+        ("0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2", 4627348),  # v1.3.0
+        ("0x63B5caf390e8AF7133DBE6bA92A69167a854Ac91", 4627348),  # v1.3.0
+    ],
+    EthereumNetwork.RSK_MAINNET: [
+        ("0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2", 3891234),  # v1.3.0
+    ],
+    EthereumNetwork.RSK_TESTNET: [
+        ("0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2", 2362232),  # v1.3.0
     ],
 }
